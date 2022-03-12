@@ -63,5 +63,19 @@ type Set struct {
 type CardMarket struct {
 	URL       string
 	UpdatedAt string
-	Prices    map[string]float64
+	MarketPrices
+}
+
+// MarketPrices represents the specific market values for a CardMarket.
+type MarketPrices struct {
+	AverageSellPrice float64
+	LowPrice         float64
+	TrendPrice       float64
+	ReverseHoloTrend float64
+	Avg1             float64
+	Avg7             float64
+	Avg30            float64
+	ReverseHoloAvg1  float64
+	ReverseHoloAvg7  float64
+	ReverseHoloAvg30 float64
 }
