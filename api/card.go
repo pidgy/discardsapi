@@ -1,9 +1,11 @@
 package api
 
+// Card contains various metadata pertaining to a single TCG card.
 type Card struct {
 	Data `json:"data"`
 }
 
+// Data contains the entire collection of metadata for a Card.
 type Data struct {
 	ID                     string
 	Name                   string
@@ -28,6 +30,7 @@ type Data struct {
 	CardMarket             CardMarket
 }
 
+// Attack represents a specific field within any Card Data field.
 type Attack struct {
 	Name                string
 	Cost                []string
@@ -36,11 +39,13 @@ type Attack struct {
 	Text                string
 }
 
+// Weakness represents a specific field within any Card Data field.
 type Weakness struct {
 	Type  string
 	Value string
 }
 
+// Set represents TCG set information for a Card.
 type Set struct {
 	ID           string
 	Name         string
@@ -54,6 +59,7 @@ type Set struct {
 	Images       map[string]string
 }
 
+// CardMarket represents market value prices and metadata for a Card.
 type CardMarket struct {
 	URL       string
 	UpdatedAt string
